@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "1",
-      "question": "Which planet is known as the “Blue Planet”?",
+      "questionTitle": "Which planet is known as the “Blue Planet”?",
       "correctAnswer": "Earth",
       "answer2": "Sun",
       "answer3": "Pluto",
@@ -10,7 +10,7 @@
     },
     {
       "id": "2",
-      "question": "Who painted the Mona Lisa?",
+      "questionTitle": "Who painted the Mona Lisa?",
       "correctAnswer": "Leonardo da Vinci",
       "answer2": "Donatello",
       "answer3": "Raphael",
@@ -18,7 +18,7 @@
     },
     {
       "id": "3",
-      "question": "In the story of Snow White, how many dwarfs are there?",
+      "questionTitle": "In the story of Snow White, how many dwarfs are there?",
       "correctAnswer": "7",
       "answer2": "4",
       "answer3": "5",
@@ -26,7 +26,7 @@
     },
     {
       "id": "4",
-      "question": "What do bees collect to make honey?",
+      "questionTitle": "What do bees collect to make honey?",
       "correctAnswer": "Nectar",
       "answer2": "Sugar",
       "answer3": "Apples",
@@ -35,26 +35,18 @@
     {
       "id": "6172",
       "questionTitle": "How old am I?",
-      "correctAnswer": "qwer",
-      "answer2": "qwer",
-      "answer3": "qwer",
-      "answer4": "qwer"
+      "correctAnswer": "23",
+      "answer2": "24",
+      "answer3": "22",
+      "answer4": "21"
     },
     {
-      "id": "3f2e",
-      "questionTitle": "How old am I?",
-      "correctAnswer": "qwer",
-      "answer2": "qwer",
-      "answer3": "qwer",
-      "answer4": "qwer"
-    },
-    {
-      "id": "e945",
-      "questionTitle": "reeeewwwwwwwww",
-      "correctAnswer": "rrrrr",
-      "answer2": "rrrr",
-      "answer3": "rrrr",
-      "answer4": "rrrrr"
+      "id": "1",
+      "questionTitle": "Which planet is known as the “Blue Planet”?",
+      "correctAnswer": "Uranus",
+      "answer2": "Sun",
+      "answer3": "Pluto",
+      "answer4": "Saturn"
     }
   ]
 }

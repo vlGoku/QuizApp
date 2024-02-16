@@ -1,11 +1,14 @@
+import React, { useState } from "react";
 import { IQuestion } from "../ts/interfaces/global_interface";
 import {
   Card,
   CardContent,
   Grid,
+  Container,
   Typography,
   CardActions,
   IconButton,
+  Radio,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Edit } from "@mui/icons-material";
@@ -21,35 +24,60 @@ export default function QuestionItemList({
   onDialog,
   onEdit,
 }: Props) {
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+
+  const answers = [
+    question.correctAnswer,
+    question.answer2,
+    question.answer3,
+    question.answer4,
+  ];
+
+  const handleAnswerSelection = (answer: string) => {
+    setSelectedAnswer(answer);
+  };
+
   return (
-    <Grid item>
-      <Card>
-        <CardContent>
+    <Container>
+      <Card sx={{ mb: "30px" }}>
+        <CardContent sx={{ backgroundColor: "peachpuff" }}>
           <Typography component="h2" variant="h5">
             Question: {question.questionTitle}
           </Typography>
-          <Typography component="h5" variant="subtitle1" sx={{ mb: 1 }}>
-            {question.answer3}
-          </Typography>
-          <Typography component="span" variant="body1">
-            {question.correctAnswer}
-          </Typography>
-          <Typography component="h5" variant="subtitle1" sx={{ mb: 1 }}>
-            {question.answer2}
-          </Typography>
-          <Typography component="h5" variant="subtitle1" sx={{ mb: 1 }}>
-            {question.answer4}
-          </Typography>
+          {answers.map((answer, index) => (
+            <div key={index}>
+              <Radio
+                onChange={() => handleAnswerSelection(answer)}
+                checked={selectedAnswer === answer}
+                value={answer}
+              />
+              <Typography
+                component="label"
+                variant="button"
+                sx={{ fontSize: "30px" }}
+              >
+                {answer}
+              </Typography>
+            </div>
+          ))}
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton color="primary" aria-label="delete-question">
+          <IconButton
+            color="primary"
+            aria-label="delete-question"
+            onClick={() => onDialog(true, question)}
+          >
             <DeleteIcon />
           </IconButton>
-          <IconButton color="primary" aria-label="edit-question">
+          <IconButton
+            color="primary"
+            aria-label="edit-question"
+            onClick={() => onEdit(true, question)}
+          >
             <Edit />
           </IconButton>
         </CardActions>
       </Card>
-    </Grid>
+    </Container>
   );
 }

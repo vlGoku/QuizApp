@@ -1,5 +1,5 @@
 import { IQuestion, QuestionInput } from "../ts/interfaces/global_interface";
-import { Container, Grid, TextField, Fab } from "@mui/material";
+import { Container, Grid, Fab } from "@mui/material";
 import Add from "@mui/icons-material/Add";
 import { useState } from "react";
 import DeleteDialog from "./DeleteDialog";
@@ -9,7 +9,6 @@ import QuestionItemList from "./QuestionItemList";
 
 export default function QuestionList() {
   const [err, handleDelete, handleAdd, questions] = useQuestions();
-  const [filter, setFilter] = useState("");
   const [deleteDialog, setDeleteDialog] = useState<{
     open: boolean;
     question: IQuestion | null;
@@ -43,26 +42,11 @@ export default function QuestionList() {
       return <Container>{(err as Error).message}</Container>;
     } else {
       return (
-        <Container sx={{ backgroundColor: "#EBEBEB", p: 10 }}>
-          <TextField
-            id="filter-input"
-            label="Liste filtern"
-            variant="outlined"
-            sx={{ mb: 3 }}
-            value={filter}
-            onChange={(e) => {
-              setFilter(e.target.value);
-            }}
-          />
+        <Container sx={{ p: 10 }}>
           <Grid container spacing={2}>
             {" "}
-            {(questions as IQuestion[])
-              /* .filter((question: IQuestion) => {
-                return question.questionTitle
-                  .toLowerCase()
-                  .includes(filter.toLowerCase());
-              }) */
-              .map((question: IQuestion): JSX.Element => {
+            {(questions as IQuestion[]).map(
+              (question: IQuestion): JSX.Element => {
                 return (
                   <QuestionItemList
                     key={question.id}
@@ -71,7 +55,8 @@ export default function QuestionList() {
                     onEdit={handleEditDialog}
                   />
                 );
-              })}
+              }
+            )}
           </Grid>
           <DeleteDialog
             title="Delete Element"
