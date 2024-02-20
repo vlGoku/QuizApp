@@ -31,22 +31,6 @@
       "answer2": "Sugar",
       "answer3": "Apples",
       "answer4": "Water"
-    },
-    {
-      "id": "6172",
-      "questionTitle": "How old am I?",
-      "correctAnswer": "23",
-      "answer2": "24",
-      "answer3": "22",
-      "answer4": "21"
-    },
-    {
-      "id": "1",
-      "questionTitle": "Which planet is known as the “Blue Planet”?",
-      "correctAnswer": "Uranus",
-      "answer2": "Sun",
-      "answer3": "Pluto",
-      "answer4": "Saturn"
     }
   ]
 }
